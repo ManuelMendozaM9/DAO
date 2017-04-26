@@ -5,9 +5,7 @@
  */
 package dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  *
@@ -17,7 +15,7 @@ public class Conexion {
     protected Connection conexion;
     //JDBC driver nombre y base de datos URL
     private final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private final String DB_URL = "jdbc:mysql://localhost:3306/ejemplo";
+    private final String DB_URL = "jdbc:mysql://localhost:3306/ejemplo?useSSL=false";
     
     //Credenciales de la base de datos
     private final String USER = "root";
@@ -25,7 +23,7 @@ public class Conexion {
     
     public void conctar() throws Exception {
         try{
-            Connection conexion = DriverManager.getConnection(DB_URL, USER, PASS);
+            conexion = DriverManager.getConnection(DB_URL, USER, PASS);
             Class.forName(JDBC_DRIVER);
         }catch(Exception e){
                 throw e;
@@ -39,4 +37,5 @@ public class Conexion {
             }
         }
     }
+    
 }

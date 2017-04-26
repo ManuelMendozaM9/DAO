@@ -5,10 +5,8 @@
  */
 package dao;
 
-import dao.Conexion;
 import interfaces.DAOPersona;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import principal.Persona;
@@ -24,6 +22,7 @@ public class DAOPersonaImpl extends Conexion implements DAOPersona {
         try{
             this.conctar();
             PreparedStatement st = this.conexion.prepareStatement("INSERT INTO persona(nombre) VALUES(?)");
+            st.setString(1, per.getNombre());
             st.executeUpdate();
         }catch(Exception e){
             throw e;
@@ -36,7 +35,7 @@ public class DAOPersonaImpl extends Conexion implements DAOPersona {
     public void modificar(Persona per) throws Exception {
         try{
             this.conctar();
-            PreparedStatement st = this.conexion.prepareStatement("UPDATE persona set nombre where id = ?");
+            PreparedStatement st = this.conexion.prepareStatement("UPDATE persona set nombre = ? where id = ?");
             st.setString(1, per.getNombre());
             st.setInt(2, per.getId());
             st.executeUpdate();
@@ -74,6 +73,7 @@ public class DAOPersonaImpl extends Conexion implements DAOPersona {
                 Persona per = new Persona();
                 per.setId(rs.getInt("id"));
                 per.setNombre(rs.getString("nombre"));
+                lista.add(per);
             }
             rs.close();
             st.close();
@@ -84,5 +84,5 @@ public class DAOPersonaImpl extends Conexion implements DAOPersona {
         }
         return lista;
     }
-}
     
+}

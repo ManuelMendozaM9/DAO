@@ -19,39 +19,39 @@ public class Principal {
      */
     public static void main(String[] args) {
         Persona per = new Persona();
-    
-        //Registrar
-         per.setNombre("Manuel");
-    
-        try{
-            DAOPersona dao = new DAOPersonaImpl();
-            dao.registrar(per);
-        }catch(Exception e){
-                System.out.println(e.getMessage());
-        }
         
         /*
+        //Registrar
+         per.setNombre("Raul");
+         
+         try{
+             DAOPersona dao = new DAOPersonaImpl();
+             dao.registrar(per);
+         }catch(Exception e){
+             System.out.println(e.getMessage());
+         }
+        
         //Modificar
-        per.setId(5);
-        per.setNombre("Raul");
-    
+        per.setNombre("Diego");
+        per.setId(2);
+        
         try{
             DAOPersona dao = new DAOPersonaImpl();
             dao.modificar(per);
         }catch(Exception e){
-                System.out.println(e.getMessage());
-        }        
+            System.out.println(e.getMessage());
+        }
+        
         //Eliminar
-        per.setId(5);
-    
+        per.setId(3);
         try{
-            DAOPersona dao = new DAOPersonaImpl();
+            DAOPersona dao = new  DAOPersonaImpl();
             dao.eliminar(per);
         }catch(Exception e){
             System.out.println(e.getMessage());
-        }    
+        }
+        */
         //Listar
-        
         try{
             DAOPersona dao = new DAOPersonaImpl();
             for(Persona p : dao.listar()){
@@ -59,8 +59,7 @@ public class Principal {
             }
         }catch(Exception e){
                 System.out.println(e.getMessage());
-        }        
-        */
+        }
+        
     }
-    
 }
