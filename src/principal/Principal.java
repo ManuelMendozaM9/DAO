@@ -19,10 +19,9 @@ public class Principal {
      */
     public static void main(String[] args) {
         Persona per = new Persona();
-        
         /*
         //Registrar
-         per.setNombre("Raul");
+         per.setNombre("Rodrigo");
          
          try{
              DAOPersona dao = new DAOPersonaImpl();
@@ -32,34 +31,35 @@ public class Principal {
          }
         
         //Modificar
-        per.setNombre("Diego");
-        per.setId(2);
-        
-        try{
-            DAOPersona dao = new DAOPersonaImpl();
-            dao.modificar(per);
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+        per.setNombre("jesus");
+        per.setId(4);
+         
+         try{
+             DAOPersona dao = new DAOPersonaImpl();
+             dao.modificar(per);
+         }catch(Exception e){
+             System.out.println(e.getMessage());
+         }
         
         //Eliminar
-        per.setId(3);
-        try{
-            DAOPersona dao = new  DAOPersonaImpl();
-            dao.eliminar(per);
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-        */
+        per.setId(6);
+         
+         try{
+             DAOPersona dao = new DAOPersonaImpl();
+             dao.eliminar(per);
+         }catch(Exception e){
+             System.out.println(e.getMessage());
+         }
+                */
         //Listar
-        try{
-            DAOPersona dao = new DAOPersonaImpl();
-            for(Persona p : dao.listar()){
-                System.out.println(p.getNombre());
-            }
-        }catch(Exception e){
-                System.out.println(e.getMessage());
-        }
-        
+               
+         try{
+             DAOPersona dao = new DAOPersonaImpl();
+             for(Persona p : dao.listar()){
+                 System.out.println(p.getNombre());
+             }
+         }catch(Exception e){
+             System.out.println(e.getMessage());
+         }
     }
 }
